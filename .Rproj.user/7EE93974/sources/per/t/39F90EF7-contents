@@ -1,0 +1,104 @@
+---
+title: "module 1"
+output: html_document
+---
+
+```{r}
+patient_02 <- fev1["Patient_02"]
+
+
+if (patient_02 > 80){
+  
+  print("Healthy")
+
+}else if(patient_02>60 & patient_02 <80){
+  
+  print("Moderate impairment")
+  
+}else if(patient_02 > 40 & patient_02 < 60){
+  
+  print("Poor")
+  
+}else{
+  print("very poor")
+}
+
+```
+
+```{r}
+if (fev1 > 80){
+  
+  print("Healthy")
+
+}else if(fev1>60 & fev1 <80){
+  
+  print("Moderate impairment")
+  
+}else if(fev1 > 40 & fev1 < 60){
+  
+  print("Poor")
+  
+}else{
+  print("very poor")
+}
+
+
+
+
+
+
+```
+
+
+
+
+
+```{r}
+for (patient_id in names(fev1)){
+  print(patient_id)
+}
+
+```
+
+
+
+```{r}
+for (patient_id in names(fev1)){
+  if (fev1[patient_id] > 80){
+    print(paste0(patient_id,": Healthy"))
+
+}else if(fev1[patient_id]>60 & fev1[patient_id] <80){
+  
+  print(paste0(patient_id,": Moderate impairment"))
+  
+}else if(fev1[patient_id] > 40 & fev1[patient_id] < 60){
+  
+  print(paste0(patient_id,": Poor"))
+  
+}else{
+  print(paste0(patient_id,": very poor"))
+  
+}
+}
+```
+
+
+
+```{r}
+age_accumulation <- 0
+
+
+for (id in names(age)){
+  
+  age_accumulation <- age_accumulation + age[id]
+  
+  
+  
+  if (age_accumulation > 150){
+    
+    break
+  }
+  print(paste0(id,": age = ",as.character(age[id]),", FEV1 = ",as.character(fev1[id])))
+}
+
+```
